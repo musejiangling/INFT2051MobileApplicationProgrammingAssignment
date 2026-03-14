@@ -1,1 +1,2 @@
 # INFT2051MobileApplicationProgrammingAssignment
+App Name:LocalBookManager

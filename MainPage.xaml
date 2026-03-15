@@ -1,0 +1,42 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LocalBookManager.MainPage"
+             Title="Local Book Manager">
+
+    <Grid RowDefinitions="Auto, Auto, *">
+        <SearchBar x:Name="MainSearchBar" Grid.Row="0" Placeholder="Search" Margin="10,15,10,10" 
+           TextChanged="OnSearchBarTextChanged" 
+           SearchButtonPressed="OnSearchButtonPressed" />
+
+        <Grid Grid.Row="1" ColumnDefinitions="Auto, *, Auto, Auto" Margin="10,5">
+            <Button x:Name="BtnImport" Grid.Column="0" Text="⊕ Import" BackgroundColor="Transparent" TextColor="Black" 
+                    FontSize="16" Clicked="OnImportClicked" />
+
+            <Button x:Name="BtnCancel" Grid.Column="2" Text="Cancel" BackgroundColor="Transparent" TextColor="Gray" 
+                    FontSize="16" Clicked="OnCancelClicked" IsVisible="False" Margin="0,0,15,0"/>
+
+            <Button x:Name="BtnSelect" Grid.Column="3" Text="✔️ Select" BackgroundColor="Transparent" TextColor="Black" 
+                    FontSize="16" Clicked="OnSelectClicked" />
+        </Grid>
+
+        <CollectionView x:Name="BookCollectionView" Grid.Row="2" Margin="10"
+                        SelectionMode="Single"
+                        SelectionChanged="OnBookSelectionChanged">
+            <CollectionView.ItemsLayout>
+                <GridItemsLayout Orientation="Vertical" Span="3" VerticalItemSpacing="15" HorizontalItemSpacing="10" />
+            </CollectionView.ItemsLayout>
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <VerticalStackLayout>
+                        <Border Stroke="Black" StrokeThickness="1" HeightRequest="120" BackgroundColor="#F0F0F0">
+                            <Label Text="{Binding CoverText}" FontSize="36" TextColor="Gray" 
+                                   HorizontalOptions="Center" VerticalOptions="Center"/>
+                        </Border>
+                        <Label FormattedText="{Binding FormattedTitle}" HorizontalOptions="Center" Margin="0,5,0,0" 
+                               LineBreakMode="TailTruncation" MaxLines="1" />
+                    </VerticalStackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </Grid>
+</ContentPage>

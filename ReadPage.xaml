@@ -1,0 +1,40 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LocalBookManager.ReadPage"
+             Title="Reading Page">
+
+    <Grid x:Name="RootGrid" RowDefinitions="50, *, 60" Margin="15,10,15,10">
+
+        <Grid Grid.Row="0" ColumnDefinitions="Auto, *, Auto" VerticalOptions="Center">
+            <Button x:Name="BackButton" Grid.Column="0" Text="&lt;" FontSize="24" FontAttributes="Bold" 
+                    BackgroundColor="Transparent" TextColor="Black" Padding="0" 
+                    Clicked="OnBackClicked" WidthRequest="40" HorizontalOptions="Start"/>
+
+            <Label x:Name="ChapterLabel" Grid.Column="1" Text="Page 1" 
+                   HorizontalOptions="Center" VerticalOptions="Center" TextColor="Gray" FontSize="14"/>
+
+            <Label x:Name="BookTitleLabel" Grid.Column="2" Text="Book Title" 
+                   HorizontalOptions="End" VerticalOptions="Center" TextColor="Gray" FontSize="14"/>
+        </Grid>
+
+        <ContentView Grid.Row="1" BackgroundColor="Transparent">
+            <ContentView.GestureRecognizers>
+                <SwipeGestureRecognizer Direction="Left" Swiped="OnSwipedLeft"/>
+                <SwipeGestureRecognizer Direction="Right" Swiped="OnSwipedRight"/>
+            </ContentView.GestureRecognizers>
+
+            <Label x:Name="ContentLabel" Text="Loading book content..." 
+                   FontSize="18" LineBreakMode="WordWrap" TextColor="Black" 
+                   VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Margin="0,15,0,15"/>
+        </ContentView>
+
+        <Button x:Name="SettingButton" Grid.Row="2" Text="⚙️ Settings" FontSize="16" 
+                BackgroundColor="White" TextColor="Black" BorderColor="Black" BorderWidth="1" 
+                CornerRadius="8" HorizontalOptions="Start" VerticalOptions="Center" Padding="10,5"
+                Clicked="OnSettingClicked"/>
+
+        <Label x:Name="PageInfoLabel" Grid.Row="2" Text="1 / 1" 
+               HorizontalOptions="End" VerticalOptions="Center" TextColor="Gray" FontSize="14"/>
+
+    </Grid>
+</ContentPage>

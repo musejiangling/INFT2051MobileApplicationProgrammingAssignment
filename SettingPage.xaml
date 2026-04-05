@@ -1,0 +1,69 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LocalBookManager.SettingPage"
+             Title="Setting">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="25">
+
+            <Grid>
+                <Button Text="✖" HorizontalOptions="End" BackgroundColor="Transparent" 
+                        TextColor="Gray" FontSize="20" Clicked="OnCloseClicked" Padding="0"/>
+            </Grid>
+
+            <Label Text="Font Size" FontAttributes="Bold" FontSize="16" TextColor="Black"/>
+            <Border Stroke="Black" StrokeThickness="1" Padding="10" StrokeShape="RoundRectangle 8">
+                <Grid ColumnDefinitions="Auto, *, Auto, Auto" VerticalOptions="Center">
+                    <Label Grid.Column="0" Text="A" FontSize="14" VerticalOptions="Center" TextColor="Black"/>
+                    <Slider x:Name="FontSizeSlider" Grid.Column="1" Minimum="12" Maximum="36" 
+                            Margin="15,0" ValueChanged="OnFontSizeChanged"/>
+                    <Border Grid.Column="2" Stroke="Black" StrokeThickness="1" StrokeShape="RoundRectangle 15" 
+                            WidthRequest="30" HeightRequest="30" VerticalOptions="Center" Margin="0,0,10,0">
+                        <Label x:Name="FontSizeLabel" Text="21" HorizontalOptions="Center" VerticalOptions="Center" TextColor="Black"/>
+                    </Border>
+                    <Label Grid.Column="3" Text="A" FontSize="24" VerticalOptions="Center" TextColor="Black"/>
+                </Grid>
+            </Border>
+
+            <Label Text="Font Style >" FontAttributes="Bold" FontSize="16" TextColor="Black"/>
+            <Border Stroke="Black" StrokeThickness="1" Padding="10" StrokeShape="RoundRectangle 8">
+                <Grid ColumnDefinitions="*, *" RowDefinitions="Auto, Auto, Auto" ColumnSpacing="15" RowSpacing="10">
+                    <Button Text="Arial" Grid.Row="0" Grid.Column="0" StyleId="Arial" Clicked="OnFontFamilyClicked" BackgroundColor="White" TextColor="Black" BorderColor="Black" BorderWidth="1"/>
+                    <Button Text="Meiryo" Grid.Row="0" Grid.Column="1" StyleId="Meiryo" Clicked="OnFontFamilyClicked" BackgroundColor="White" TextColor="Black" BorderColor="Black" BorderWidth="1"/>
+                    <Button Text="Dotum" Grid.Row="1" Grid.Column="0" StyleId="Dotum" Clicked="OnFontFamilyClicked" BackgroundColor="White" TextColor="Black" BorderColor="Black" BorderWidth="1"/>
+                    <Button Text="Sans" Grid.Row="1" Grid.Column="1" StyleId="Sans-Serif" Clicked="OnFontFamilyClicked" BackgroundColor="White" TextColor="Black" BorderColor="Black" BorderWidth="1"/>
+                    <Button Text="Century" Grid.Row="2" Grid.Column="0" StyleId="Century Gothic" Clicked="OnFontFamilyClicked" BackgroundColor="White" TextColor="Black" BorderColor="Black" BorderWidth="1"/>
+                    <Button Text="AAA" Grid.Row="2" Grid.Column="1" StyleId="System" Clicked="OnFontFamilyClicked" BackgroundColor="White" TextColor="Black" BorderColor="Black" BorderWidth="1"/>
+                </Grid>
+            </Border>
+
+            <Label Text="Background >" FontAttributes="Bold" FontSize="16" TextColor="Black"/>
+            <Border Stroke="Black" StrokeThickness="1" Padding="10" StrokeShape="RoundRectangle 8">
+                <Grid ColumnDefinitions="*, *" RowDefinitions="Auto, Auto" ColumnSpacing="15" RowSpacing="10">
+                    <Button Text="Black" BackgroundColor="Black" TextColor="White" Grid.Row="0" Grid.Column="0" StyleId="#000000" Clicked="OnBgColorClicked"/>
+                    <Button Text="White" BackgroundColor="White" TextColor="Black" BorderColor="Black" BorderWidth="1" Grid.Row="0" Grid.Column="1" StyleId="#FFFFFF" Clicked="OnBgColorClicked"/>
+                    <Button Text="Yellow" BackgroundColor="#FFFACD" TextColor="Black" BorderColor="Black" BorderWidth="1" Grid.Row="1" Grid.Column="0" StyleId="#FFFACD" Clicked="OnBgColorClicked"/>
+                    <Button Text="Green" BackgroundColor="#E0EEE0" TextColor="Black" BorderColor="Black" BorderWidth="1" Grid.Row="1" Grid.Column="1" StyleId="#E0EEE0" Clicked="OnBgColorClicked"/>
+                </Grid>
+            </Border>
+
+            <Label Text="Reading Reminder" FontAttributes="Bold" FontSize="16" TextColor="Black"/>
+            <Border Stroke="Black" StrokeThickness="1" Padding="15" StrokeShape="RoundRectangle 8">
+                <VerticalStackLayout Spacing="10">
+                    <Grid ColumnDefinitions="*, Auto">
+                        <Label Grid.Column="0" Text="Enable Daily Reminder" VerticalOptions="Center" TextColor="Black"/>
+                        <Switch x:Name="ReminderSwitch" Grid.Column="1" Toggled="OnReminderToggled"/>
+                    </Grid>
+
+                    <Grid ColumnDefinitions="*, Auto">
+                        <Label Grid.Column="0" Text="Reminder Time" VerticalOptions="Center" TextColor="Black"/>
+                        <TimePicker x:Name="ReminderTimePicker" Grid.Column="1" 
+                        PropertyChanged="OnReminderTimeChanged" 
+                        Format="HH:mm" TextColor="Black"/>
+                    </Grid>
+                </VerticalStackLayout>
+            </Border>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

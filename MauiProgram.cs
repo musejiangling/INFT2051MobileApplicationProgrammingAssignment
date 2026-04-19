@@ -15,6 +15,12 @@ namespace LocalBookManager
                 {
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
+                    fonts.AddFont("arial.ttf", "Arial");
+                    fonts.AddFont("meiryo.ttf", "Meiryo");
+                    fonts.AddFont("dotum.ttf", "Dotum");
+                    fonts.AddFont("aaa.ttf", "AAA");
+                    fonts.AddFont("sans_serif.ttf", "SansSerif");
+                    fonts.AddFont("century_gothic.ttf", "CenturyGothic");
                 });
 
 #if DEBUG

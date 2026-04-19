@@ -44,7 +44,6 @@ namespace LocalBookManager
 
             string fontFamily = Preferences.Default.Get("ReadPage_FontFamily", "System");
 
-            // Font in mobile phone repiar
             MainThread.BeginInvokeOnMainThread(() =>
             {
                 if (string.IsNullOrEmpty(fontFamily) || fontFamily == "System")

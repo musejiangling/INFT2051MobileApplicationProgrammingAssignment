@@ -31,9 +31,9 @@
                     <Button Text="Arial" Grid.Row="0" Grid.Column="0" StyleId="Arial" Clicked="OnFontFamilyClicked" BackgroundColor="White" TextColor="Black" BorderColor="Black" BorderWidth="1"/>
                     <Button Text="Meiryo" Grid.Row="0" Grid.Column="1" StyleId="Meiryo" Clicked="OnFontFamilyClicked" BackgroundColor="White" TextColor="Black" BorderColor="Black" BorderWidth="1"/>
                     <Button Text="Dotum" Grid.Row="1" Grid.Column="0" StyleId="Dotum" Clicked="OnFontFamilyClicked" BackgroundColor="White" TextColor="Black" BorderColor="Black" BorderWidth="1"/>
-                    <Button Text="Sans" Grid.Row="1" Grid.Column="1" StyleId="Sans-Serif" Clicked="OnFontFamilyClicked" BackgroundColor="White" TextColor="Black" BorderColor="Black" BorderWidth="1"/>
-                    <Button Text="Century" Grid.Row="2" Grid.Column="0" StyleId="Century Gothic" Clicked="OnFontFamilyClicked" BackgroundColor="White" TextColor="Black" BorderColor="Black" BorderWidth="1"/>
-                    <Button Text="AAA" Grid.Row="2" Grid.Column="1" StyleId="System" Clicked="OnFontFamilyClicked" BackgroundColor="White" TextColor="Black" BorderColor="Black" BorderWidth="1"/>
+                    <Button Text="Sans Serif" Grid.Row="1" Grid.Column="1" StyleId="SansSerif" Clicked="OnFontFamilyClicked" BackgroundColor="White" TextColor="Black" BorderColor="Black" BorderWidth="1"/>
+                    <Button Text="Century Gothic" Grid.Row="2" Grid.Column="0" StyleId="CenturyGothic" Clicked="OnFontFamilyClicked" BackgroundColor="White" TextColor="Black" BorderColor="Black" BorderWidth="1"/>
+                    <Button Text="System Default" Grid.Row="2" Grid.Column="1" StyleId="System" Clicked="OnFontFamilyClicked" BackgroundColor="White" TextColor="Black" BorderColor="Black" BorderWidth="1"/>
                 </Grid>
             </Border>
 
